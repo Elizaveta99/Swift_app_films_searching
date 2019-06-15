@@ -31,6 +31,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var filmsView: UICollectionView!
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var popularView: UICollectionView!
+    @IBOutlet weak var infoView: UIView!
     
     var cntReloads = 0
     var filtered:[Film] = []
@@ -99,6 +100,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             films[index[0]].amount = films[index[0]].amount + 1
             cntReloads = cntReloads + 1
             print("Row \(indexPath.row) selected")
+            infoView.isHidden = false;
+            
             
             if cntReloads == 10 {
                 self.popularView.reloadData()
@@ -119,9 +122,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     let film1 = Film(title: "Film1", year: "2005", descript: "Doctor WHO. 1 season", image: "1.jpg")
     let film2 = Film(title: "Film2", year: "2006", descript: "Doctor WHO. 2 season", image: "2.jpg")
     let film3 = Film(title: "Film3", year: "2008", descript: "Doctor WHO. 3 season", image: "3.jpg")
-    let film4 = Film(title: "Film11", year: "2010", descript: "Doctor WHO. 4 season", image: "1.jpg")
-    let film5 = Film(title: "Doctor WHO", year: "2012", descript: "Doctor WHO. 5 season", image: "2.jpg")
-    let film6 = Film(title: "Doctor Who", year: "2013", descript: "Doctor WHO. 6 season", image: "3.jpg")
+    let film4 = Film(title: "Film11", year: "2010", descript: "Doctor WHO. 4 season", image: "4.jpg")
+    let film5 = Film(title: "Doctor WHO", year: "2012", descript: "Doctor WHO. 5 season", image: "5.jpg")
+    let film6 = Film(title: "Doctor Who", year: "2013", descript: "Doctor WHO. 6 season", image: "6.jpg")
     
     override func viewDidLoad()
     {
