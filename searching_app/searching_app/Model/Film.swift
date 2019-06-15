@@ -26,4 +26,5 @@ class Film
         self.amount = amount
         self.score = score
     }
+    
 }

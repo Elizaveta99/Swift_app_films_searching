@@ -20,6 +20,7 @@
 		C9E3522822B5271800DF4A40 /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E3522722B5271800DF4A40 /* Film.swift */; };
 		C9E3522A22B5532300DF4A40 /* filmsDescriptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9E3522922B5532300DF4A40 /* filmsDescriptions.plist */; };
 		C9E3522C22B55DAD00DF4A40 /* FilmEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E3522B22B55DAD00DF4A40 /* FilmEntity.swift */; };
+		C9E3522E22B581E900DF4A40 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E3522D22B581E900DF4A40 /* InfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		C9E3522722B5271800DF4A40 /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 		C9E3522922B5532300DF4A40 /* filmsDescriptions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = filmsDescriptions.plist; sourceTree = "<group>"; };
 		C9E3522B22B55DAD00DF4A40 /* FilmEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmEntity.swift; sourceTree = "<group>"; };
+		C9E3522D22B581E900DF4A40 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 		C9E3522222B4383200DF4A40 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C9E3522D22B581E900DF4A40 /* InfoViewController.swift */,
 				C9E351F022B42F2700DF4A40 /* ViewController.swift */,
 			);
 			path = Controller;
@@ -305,6 +308,7 @@
 				C9E351F122B42F2700DF4A40 /* ViewController.swift in Sources */,
 				C9E3522C22B55DAD00DF4A40 /* FilmEntity.swift in Sources */,
 				C9E3522622B4E5B100DF4A40 /* popularCell.swift in Sources */,
+				C9E3522E22B581E900DF4A40 /* InfoViewController.swift in Sources */,
 				C9E351EF22B42F2700DF4A40 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

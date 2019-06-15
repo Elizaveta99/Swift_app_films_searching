@@ -14,14 +14,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var filmsView: UICollectionView!
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var popularView: UICollectionView!
-    @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var mainTitle: UILabel!
     
-    @IBOutlet weak var infoImage: UIImageView!
-    @IBOutlet weak var infoYear: UILabel!
-    @IBOutlet weak var infoScore: UILabel!
-    @IBOutlet weak var infoDescription: UILabel!
-    @IBOutlet weak var backButton: UIButton!
+    
     
     var cntReloads = 0
     var filtered:[Film] = []
@@ -72,7 +67,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
         else
         {
-            print("pop_reload")
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "popularcell", for: indexPath) as! popularCell
             sorted = films.sorted(by: {$0.amount > $1.amount})
             
@@ -97,23 +91,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             films[index[0]].amount = films[index[0]].amount + 1
             cntReloads = cntReloads + 1
             
-            infoView.isHidden = false
-            infoImage.image = UIImage.init(named:filtered[indexPath.row].image)!
-            self.mainTitle.text = filtered[indexPath.row].title
-            infoYear.text = "Year: \(filtered[indexPath.row].year)"
-            infoScore.text = "Score: " + String(filtered[indexPath.row].score)
-            
-            var descriptions: [String: String] = [:]
-            var format = PropertyListSerialization.PropertyListFormat.xml
-            let plistPath = Bundle.main.path(forResource: "filmsDescriptions", ofType: "plist")
-            let plistXML = FileManager.default.contents(atPath: plistPath!)
-            do
-            {
-                descriptions = try PropertyListSerialization.propertyList(from: plistXML!, options: .mutableContainersAndLeaves, format: &format) as! [String: String]
-            }
-            catch { }
-            
-            infoDescription.text = descriptions[filtered[indexPath.row].title]
+            self.searchController.dismiss(animated: true, completion: nil)
+            performSegue(withIdentifier: "infoSegue", sender: filtered[indexPath.row])
             
             if cntReloads == 5 {
                 self.popularView.reloadData()
@@ -135,7 +114,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        infoView.isHidden = true
         filmsView.dataSource = self
         filmsView.delegate = self
         popularView.dataSource = self
@@ -149,7 +127,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         for flm in films_temp
         {
             let film_temp = Film(title: flm.title!, year: flm.year!, image: flm.image!, descript: flm.descript!, score: flm.score, amount: Int(flm.amount))
-            print("amount = ", film_temp.title, " ", film_temp.amount)
             films.append(film_temp)
         }
         
@@ -167,11 +144,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         self.searchView.addSubview(searchController.searchBar)
     }
 
-
-    @IBAction func backButtonClicked(_ sender: Any) {
-        self.infoView.isHidden = true
-        self.mainTitle.text = "MOVIES"
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "infoSegue")
+        {
+            let vc = segue.destination as! InfoViewController
+            vc.film = sender as! Film
+        }
     }
+    
     
 }
 

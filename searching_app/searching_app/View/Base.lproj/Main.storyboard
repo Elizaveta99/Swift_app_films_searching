@@ -125,8 +125,37 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d9N-zS-Ios">
+                                <rect key="frame" x="0.0" y="114" width="414" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="filmsView" destination="Lyn-kB-peY" id="zne-8G-GDr"/>
+                        <outlet property="mainTitle" destination="Ltg-O1-eWK" id="a75-Pf-GcL"/>
+                        <outlet property="popularView" destination="map-QK-vO5" id="T2D-Ln-tOu"/>
+                        <outlet property="searchView" destination="d9N-zS-Ios" id="0v6-6R-cr1"/>
+                        <segue destination="hmg-cX-BDR" kind="presentation" identifier="infoSegue" id="hZM-OR-3ET"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="18.75"/>
+        </scene>
+        <!--Info View Controller-->
+        <scene sceneID="qx3-07-NUg">
+            <objects>
+                <viewController id="hmg-cX-BDR" customClass="InfoViewController" customModule="searching_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QG5-lB-AAw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8J8-ER-um6">
-                                <rect key="frame" x="12" y="103" width="392" height="751"/>
+                                <rect key="frame" x="11" y="72" width="392" height="751"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54K-Vl-07V">
@@ -151,7 +180,7 @@
                                             <color key="titleColor" red="0.16412557307286488" green="0.021274744632554739" blue="0.29189604922279788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="backButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uy8-iO-xRZ"/>
+                                            <action selector="backButtonClicked:" destination="hmg-cX-BDR" eventType="touchUpInside" id="QSi-em-AzI"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="50" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aei-bS-Qmq">
@@ -165,34 +194,33 @@
                                         <rect key="frame" x="0.0" y="96" width="252" height="236"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6j-1X-3uT">
+                                        <rect key="frame" x="0.0" y="23" width="392" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d9N-zS-Ios">
-                                <rect key="frame" x="0.0" y="114" width="414" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="5gk-dv-ED9"/>
                     </view>
                     <connections>
-                        <outlet property="backButton" destination="zDz-wH-fjl" id="bqS-cJ-R7o"/>
-                        <outlet property="filmsView" destination="Lyn-kB-peY" id="zne-8G-GDr"/>
-                        <outlet property="infoDescription" destination="aei-bS-Qmq" id="Oqr-Af-D0N"/>
-                        <outlet property="infoImage" destination="crH-rD-frK" id="5zm-6Y-5yf"/>
-                        <outlet property="infoScore" destination="qYL-0l-A3f" id="Gc8-CA-2te"/>
-                        <outlet property="infoView" destination="8J8-ER-um6" id="SYj-ID-bhG"/>
-                        <outlet property="infoYear" destination="54K-Vl-07V" id="2DP-Gp-Rau"/>
-                        <outlet property="mainTitle" destination="Ltg-O1-eWK" id="a75-Pf-GcL"/>
-                        <outlet property="popularView" destination="map-QK-vO5" id="T2D-Ln-tOu"/>
-                        <outlet property="searchView" destination="d9N-zS-Ios" id="0v6-6R-cr1"/>
+                        <outlet property="backButton" destination="zDz-wH-fjl" id="hY5-hb-Xht"/>
+                        <outlet property="infoDescription" destination="aei-bS-Qmq" id="Auc-Vi-l53"/>
+                        <outlet property="infoImage" destination="crH-rD-frK" id="jdl-23-5fH"/>
+                        <outlet property="infoScore" destination="qYL-0l-A3f" id="jhY-J2-ugs"/>
+                        <outlet property="infoTitle" destination="E6j-1X-3uT" id="dI1-cs-m6p"/>
+                        <outlet property="infoView" destination="8J8-ER-um6" id="Wdk-aw-Vwm"/>
+                        <outlet property="infoYear" destination="54K-Vl-07V" id="IIp-QK-Gl8"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hrq-PD-7IF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="34.782608695652179" y="18.75"/>
+            <point key="canvasLocation" x="721.73913043478262" y="18.75"/>
         </scene>
     </scenes>
 </document>
