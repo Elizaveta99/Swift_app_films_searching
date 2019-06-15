@@ -168,6 +168,9 @@
                                         <state key="normal" title="Back">
                                             <color key="titleColor" red="0.16412557307286488" green="0.021274744632554739" blue="0.29189604922279788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="backButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nqa-vO-ZQc"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -182,8 +185,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="zDz-wH-fjl" id="bqS-cJ-R7o"/>
                         <outlet property="filmsView" destination="Lyn-kB-peY" id="zne-8G-GDr"/>
+                        <outlet property="infoDescription" destination="aei-bS-Qmq" id="Oqr-Af-D0N"/>
+                        <outlet property="infoImage" destination="crH-rD-frK" id="5zm-6Y-5yf"/>
+                        <outlet property="infoScore" destination="qYL-0l-A3f" id="Gc8-CA-2te"/>
+                        <outlet property="infoTitle" destination="tPp-9d-TQW" id="PDZ-mp-05d"/>
                         <outlet property="infoView" destination="8J8-ER-um6" id="SYj-ID-bhG"/>
+                        <outlet property="infoYear" destination="54K-Vl-07V" id="2DP-Gp-Rau"/>
                         <outlet property="popularView" destination="map-QK-vO5" id="T2D-Ln-tOu"/>
                         <outlet property="searchView" destination="d9N-zS-Ios" id="0v6-6R-cr1"/>
                     </connections>

@@ -15,14 +15,16 @@ class Film
     let descript: String
     let image: String
     var amount: Int
+    var score: Double
     
-    init(title: String, year: String, descript: String, image: String)
+    init(title: String, year: String, descript: String, image: String, score: Double)
     {
         self.title = title
         self.year = year
         self.descript = descript
         self.image = image
         self.amount = 0
+        self.score = score
     }
 }
 
@@ -32,6 +34,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var popularView: UICollectionView!
     @IBOutlet weak var infoView: UIView!
+    
+    @IBOutlet weak var infoImage: UIImageView!
+    @IBOutlet weak var infoTitle: UILabel!
+    @IBOutlet weak var infoYear: UILabel!
+    @IBOutlet weak var infoScore: UILabel!
+    @IBOutlet weak var infoDescription: UILabel!
+    @IBOutlet weak var backButton: UIButton!
+    
     
     var cntReloads = 0
     var filtered:[Film] = []
@@ -49,7 +59,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
         
         self.filmsView.reloadData()
-        print(cntReloads)
         if cntReloads == 10 {
             self.popularView.reloadData()
             cntReloads = 0
@@ -99,8 +108,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             var index = films.enumerated().compactMap { $0.element.title == filtered[indexPath.row].title ? $0.offset : nil }
             films[index[0]].amount = films[index[0]].amount + 1
             cntReloads = cntReloads + 1
-            print("Row \(indexPath.row) selected")
-            infoView.isHidden = false;
+            
+            //print("Row \(indexPath.row) selected")
+            //searchView.isHidden = true
+            infoView.isHidden = false
+            searchView.alpha = 0.0
+            //self.searchView.willRemoveSubview(searchController.searchBar)
+            infoImage.image = UIImage.init(named:filtered[indexPath.row].image)!
+            infoTitle.text = filtered[indexPath.row].title
+            infoYear.text = "Year: \(filtered[indexPath.row].year)"
+            infoScore.text = "Score: " + String(filtered[indexPath.row].score)
+            infoDescription.text = filtered[indexPath.row].descript
             
             
             if cntReloads == 10 {
@@ -119,16 +137,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     var films:[Film] = []
     
-    let film1 = Film(title: "Film1", year: "2005", descript: "Doctor WHO. 1 season", image: "1.jpg")
-    let film2 = Film(title: "Film2", year: "2006", descript: "Doctor WHO. 2 season", image: "2.jpg")
-    let film3 = Film(title: "Film3", year: "2008", descript: "Doctor WHO. 3 season", image: "3.jpg")
-    let film4 = Film(title: "Film11", year: "2010", descript: "Doctor WHO. 4 season", image: "4.jpg")
-    let film5 = Film(title: "Doctor WHO", year: "2012", descript: "Doctor WHO. 5 season", image: "5.jpg")
-    let film6 = Film(title: "Doctor Who", year: "2013", descript: "Doctor WHO. 6 season", image: "6.jpg")
+    let film1 = Film(title: "Film1", year: "2005", descript: "Doctor WHO. 1 season", image: "1.jpg", score: 8.0)
+    let film2 = Film(title: "Film2", year: "2006", descript: "Doctor WHO. 2 season", image: "2.jpg", score: 9.3)
+    let film3 = Film(title: "Film3", year: "2008", descript: "Doctor WHO. 3 season", image: "3.jpg", score: 9.1)
+    let film4 = Film(title: "Film11", year: "2010", descript: "Doctor WHO. 4 season", image: "4.jpg", score: 9.2)
+    let film5 = Film(title: "Doctor WHO", year: "2012", descript: "Doctor WHO. 5 season", image: "5.jpg", score: 8.9)
+    let film6 = Film(title: "Doctor Who", year: "2013", descript: "Doctor WHO. 6 season", image: "6.jpg", score: 9.2)
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        infoView.isHidden = true
         filmsView.dataSource = self
         filmsView.delegate = self
         popularView.dataSource = self
@@ -154,9 +173,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         searchController.searchBar.sizeToFit()
         searchController.searchBar.becomeFirstResponder()
         self.searchView.addSubview(searchController.searchBar)
+        
         //print("!!!")
     }
 
-
+    @IBAction func backButtonClicked(_ sender: Any) {
+        infoView.isHidden = true
+        //self.searchView.addSubview(searchController.searchBar)
+        //searchView.isHidden = false
+    }
+    
+    
 }
 
