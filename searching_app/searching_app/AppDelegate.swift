@@ -15,8 +15,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
+    {
+        if !UserDefaults.standard.bool(forKey: "HasLaunchedOnce")
+        {
+            UserDefaults.standard.set(true, forKey: "HasLaunchedOnce")
+            UserDefaults.standard.synchronize()
+            
+            var _: FilmEntity = FilmEntity(persistentContainer: persistentContainer, title: "Film1", year: "2005", image: "1.jpg", descript: "Doctor WHO. 1 season", score: 8.0, amount: 0)
+            var _: FilmEntity = FilmEntity(persistentContainer: persistentContainer, title: "Film2", year: "2006", image: "2.jpg", descript: "Doctor WHO. 2 season", score: 9.3, amount: 0)
+            var _: FilmEntity = FilmEntity(persistentContainer: persistentContainer, title: "Film3", year: "2007", image: "3.jpg", descript: "Doctor WHO. 3 season", score: 9.1, amount: 0)
+            var _: FilmEntity = FilmEntity(persistentContainer: persistentContainer, title: "Film11(4)", year: "2008", image: "4.jpg", descript: "Doctor WHO. 4 season", score: 9.2, amount: 0)
+            var _: FilmEntity = FilmEntity(persistentContainer: persistentContainer, title: "DoctorWho_Film5", year: "2010", image: "5.jpg", descript: "Doctor WHO. 5 season", score: 8.9, amount: 0)
+            var _: FilmEntity = FilmEntity(persistentContainer: persistentContainer, title: "IAmTheDoctor(Film6)", year: "2011", image: "6.jpg", descript: "Doctor WHO. 6 season", score: 9.2, amount: 0)
+            var _: FilmEntity = FilmEntity(persistentContainer: persistentContainer, title: "Film7", year: "2012", image: "7.jpg", descript: "Doctor WHO. 7 season", score: 9.8, amount: 0)
+            var _: FilmEntity = FilmEntity(persistentContainer: persistentContainer, title: "Allonsy_Film8", year: "2014", image: "8.jpg", descript: "Doctor WHO. 8 season", score: 9.7, amount: 0)
+            var _: FilmEntity = FilmEntity(persistentContainer: persistentContainer, title: "Fantastic_Film9", year: "2015", image: "9.jpg", descript: "Doctor WHO. 9 season", score: 8.9, amount: 0)
+            var _: FilmEntity = FilmEntity(persistentContainer: persistentContainer, title: "TheLastDoctor_Film10", year: "2017", image: "10.jpg", descript: "Doctor WHO. 10 season", score: 9.6, amount: 0)
+            var _: FilmEntity = FilmEntity(persistentContainer: persistentContainer, title: "ThisDoctorIsTooCool_Film11", year: "2018", image: "11.jpg", descript: "Doctor WHO. 11 season", score: 9.5, amount: 0)
+        }
         return true
     }
 
