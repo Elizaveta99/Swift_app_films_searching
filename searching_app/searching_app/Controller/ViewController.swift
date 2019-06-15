@@ -16,8 +16,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var popularView: UICollectionView!
     @IBOutlet weak var mainTitle: UILabel!
     
-    
-    
     var cntReloads = 0
     var filtered:[Film] = []
     var sorted:[Film] = []
@@ -75,7 +73,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             {
                 var _: FilmEntity = FilmEntity(persistentContainer: (appDelegate?.persistentContainer)!, title: flm.title, amount: flm.amount)
             }
-            
             cell.title.text = sorted[indexPath.item].title
             cell.image.image = UIImage.init(named: sorted[indexPath.item].image)!
             

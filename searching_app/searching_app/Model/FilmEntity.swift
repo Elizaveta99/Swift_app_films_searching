@@ -24,6 +24,7 @@ class FilmEntity
         {
             objects[0].setValue(amount, forKey: "amount")
         }
+        try! managedContext.save()
     }
     
     init(persistentContainer: NSPersistentContainer, title: String, year: String, image: String, descript: String, score: Double, amount: Int)
