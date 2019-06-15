@@ -100,6 +100,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
         else
         {
+            var index = films.enumerated().compactMap { $0.element.title == sorted[indexPath.item].title ? $0.offset : nil }
+            films[index[0]].amount = films[index[0]].amount + 1
+            cntReloads = cntReloads + 1
+            
+            self.searchController.dismiss(animated: true, completion: nil)
+            performSegue(withIdentifier: "infoSegue", sender: films[index[0]])
+            
+            if cntReloads == 5 {
+                self.popularView.reloadData()
+                cntReloads = 0
+            }
             return false
         }
     }
