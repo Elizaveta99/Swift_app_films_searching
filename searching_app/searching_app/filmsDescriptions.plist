@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   filmsDescriptions.plist
+   searching_app
+
+   Created by Lizaveta Rudzko on 3/25/1398 AP.
+   Copyright (c) 1398 Lizaveta Rudzko. All rights reserved.
+-->
+<plist version="1.0">
+    <dict>
+        <key>Film1</key>
+        <string>The 2005 series constitutes a loose story arc, dealing with the consequences of the Time War and the mysterious Bad Wolf.</string>
+        <key>Film2</key>
+        <string>The back-story for the spin-off series Torchwood is "seeded" in various episodes in the 2006 series. Each episode also has an accompanying online Tardisode.</string>
+        <key>Film3</key>
+        <string>This series introduces Martha Jones and deals with the Face of Boe's final message, the mysterious Mr. Saxon, and the Doctor dealing with the loss of Rose Tyler.</string>
+        <key>Film11(4)</key>
+        <string>This series explores the coincidences binding the Doctor and Donna together.</string>
+        <key>DoctorWho_Film5</key>
+        <string>This series deals with cracks spreading throughout time and the Pandorica.</string>
+        <key>IAmTheDoctor(Film6)</key>
+        <string>The series centres on River Song's relation to the Doctor, and the Doctor's "death". The original transmission of series 6 was split into two parts, with the first seven episodes airing April to June 2011 and the final six from late August to October 2011.</string>
+        <key>Film7</key>
+        <string>Series 7 started with five episodes and a Christmas Special in late 2012, followed by eight episodes in 2013. The series dealt with the exit of the Ponds, the Great Intelligence and the mystery of Clara Oswald, the impossible girl.</string>
+        <key>Allonsy_Film8</key>
+        <string>For Series 8–10, the episode count was reduced from thirteen to twelve. This series dealt with the mystery identity of the character "Missy".</string>
+        <key>Fantastic_Film9</key>
+        <string>This series dealt with the consequences of the Doctor and Clara’s relationship, and the Doctor’s confession about the Hybrid.</string>
+        <key>TheLastDoctor_Film10</key>
+        <string>This series dealt with the mystery of the vault and the Doctor’s oath, later exploring the Doctor and Missy’s relationship, and the possibility of Missy "turning good".</string>
+        <key>ThisDoctorIsTooCool_Film11</key>
+        <string>The Thirteenth Doctor initially searches for her lost TARDIS, inadvertently bringing her companions with her on her travels, who contemplate returning to their lives but decide to continue travelling.</string>
+        
+    </dict>
+</plist>
